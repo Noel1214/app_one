@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.teal,
-              brightness: Brightness.dark,
+              brightness: selectedThemeNotifier.value ? Brightness.dark : Brightness.light,
             ),
           ),
           home: SafeArea(child: WidgetTree()),
