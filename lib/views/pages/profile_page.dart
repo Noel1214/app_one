@@ -1,3 +1,4 @@
+import 'package:appone/data/notifiers.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -5,8 +6,20 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Profile Page"),
+    return ValueListenableBuilder(
+      valueListenable: selectedThemeNotifier,
+      builder: (context, value, child) {
+        return Center(
+          child: Container(
+            child: ElevatedButton(
+              onPressed: () {
+                selectedThemeNotifier.value = !selectedThemeNotifier.value;
+              },
+              child: Text("This is button"),
+            ),
+          ),
+        );
+      },
     );
   }
 }
