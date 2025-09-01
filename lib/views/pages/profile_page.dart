@@ -9,8 +9,10 @@ class ProfilePage extends StatelessWidget {
     return ValueListenableBuilder(
       valueListenable: selectedThemeNotifier,
       builder: (context, value, child) {
-        return Container(
-          child: Text("Profile")
+        return Center(
+          child: Container(
+            child: Text("Profile")
+          ),
         );
       },
     );
