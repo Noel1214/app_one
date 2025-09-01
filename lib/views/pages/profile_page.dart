@@ -15,7 +15,7 @@ class ProfilePage extends StatelessWidget {
               onPressed: () {
                 selectedThemeNotifier.value = !selectedThemeNotifier.value;
               },
-              child: Text("This is button"),
+              child: Text("Change Theme"),
             ),
           ),
         );
