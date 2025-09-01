@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
-      valueListenable: selectedPageNotifier,
+      valueListenable: selectedThemeNotifier,
       builder: (context, value, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
