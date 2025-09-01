@@ -1,3 +1,4 @@
+import 'package:appone/data/notifiers.dart';
 import 'package:appone/views/widget_tree.dart';
 import 'package:flutter/material.dart';
 
@@ -17,16 +18,21 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Flutter app",
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
-          brightness: Brightness.dark,
-        ),
-      ),
-      home: SafeArea(child: WidgetTree()),
+    return ValueListenableBuilder(
+      valueListenable: selectedPageNotifier,
+      builder: (context, value, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: "Flutter app",
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.teal,
+              brightness: Brightness.dark,
+            ),
+          ),
+          home: SafeArea(child: WidgetTree()),
+        );
+      },
     );
   }
 }
