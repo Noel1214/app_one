@@ -24,7 +24,6 @@ class ProfilePage extends StatelessWidget {
                         ? Icon(Icons.dark_mode)
                         : Icon(Icons.light_mode),
                     SizedBox(width: 10),
-                    
                     selectedThemeNotifier.value ? Text("Dark Mode") : Text("Light Mode"),
                   ],
                 ),
